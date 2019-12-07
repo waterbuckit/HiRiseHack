@@ -5,7 +5,7 @@ import requests
 import os
 import sys
 
-Image.MAX_IMAGE_PIXELS = 324418338
+Image.MAX_IMAGE_PIXELS = None
 
 if not os.path.exists('img'):
 	os.mkdir("img")
