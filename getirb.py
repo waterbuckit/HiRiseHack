@@ -3,11 +3,16 @@ from PIL import Image
 from io import BytesIO
 import requests
 import os
+import sys
+
+if not os.path.exists('img'):
+	os.mkdir("img")
 
 root = sys.argv[1]
 response = requests.get(root)
 img = Image.open(BytesIO(response.content))
-img.save("img/" + a['href'][:-1] + ".tiff")
+filename = root.split("/")[-1][:-4]
+img.save("img/" + filename + ".tiff")
 
 """
 root = "https://hirise-pds.lpl.arizona.edu/PDS/EXTRAS/RDR/ESP/ORB_060100_060199/"
