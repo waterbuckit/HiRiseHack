@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 import requests
 import os
+import sys
 
 root = sys.argv[1]
 response = requests.get(root)
