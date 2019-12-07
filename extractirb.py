@@ -16,9 +16,9 @@ red_channel = src[:,:,2]
 blue_channel = src[:,:,0]
 green_channel = src[:,:,1]
 
-cv2.imwrite("./tmp/0.png", red_channel)
+cv2.imwrite("./tmp/2.png", red_channel)
 cv2.imwrite("./tmp/1.png", green_channel)
-cv2.imwrite("./tmp/2.png", blue_channel)
+cv2.imwrite("./tmp/0.png", blue_channel)
 
 images = []
 for i in range(3):
