@@ -5,12 +5,12 @@ import requests
 import os
 import sys
 
-Image.MAX_IMAGE_PIXELS = 324418338
+Image.MAX_IMAGE_PIXELS = None
 
 if not os.path.exists('img'):
 	os.mkdir("img")
-
 root = sys.argv[1]
+print(root)
 response = requests.get(root)
 img = Image.open(BytesIO(response.content))
 filename = root.split("/")[-1][:-4]
