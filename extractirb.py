@@ -29,4 +29,5 @@ for file_name in os.listdir("./tmp"):
 
 fileName = sys.argv[1].split("/", 1)[1].split(".",1)[0] + ".gif"
 imageio.mimsave("./results/%s" % (fileName), images)
-print("Writtent to: ./results/%s" % (fileName))
+print("Written to: ./results/%s" % (fileName))
+
