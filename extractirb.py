@@ -1,7 +1,6 @@
 import cv2
 import os
 import sys
-<<<<<<< HEAD
 import imageio
 
 try:
