@@ -1,10 +1,13 @@
 import cv2
+import numpy as np
 import os
 import sys
 import imageio
 from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = None
+
+brightness = 50 
 
 try:
     # create tmp file
@@ -23,6 +26,12 @@ green_channel = src[:,:,1]
 cv2.imwrite("./tmp/2.png", red_channel)
 cv2.imwrite("./tmp/1.png", green_channel)
 cv2.imwrite("./tmp/0.png", blue_channel)
+
+toImprove = cv2.imread("./tmp/0.png")
+hsv = cv2.cvtColor(toImprove, cv2.COLOR_BGR2HSV)
+hsv[:,:,2] += brightness
+toImprove = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+cv2.imwrite("./tmp/0.png", toImprove)
 
 images = []
 for i in range(3):
