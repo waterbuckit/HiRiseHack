@@ -14,7 +14,7 @@ print(root)
 response = requests.get(root)
 img = Image.open(BytesIO(response.content))
 filename = root.split("/")[-1][:-4]
-img.save("img/" + filename + ".tiff")
+img.save("img/" + filename + ".png")
 
 """
 root = "https://hirise-pds.lpl.arizona.edu/PDS/EXTRAS/RDR/ESP/ORB_060100_060199/"
